@@ -13,3 +13,52 @@
   background-color: gray;
   width: 50px !important;
 }
+
+.hi-contrast {
+  width: 100px;
+  height: 100px;
+  color: white;
+  background-color: black;
+}
+
+.blue {
+  width: 100px;
+  height: 100px;
+  color: yellow;
+  background-color: blue;
+}
+
+.ex-one {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  color: white;
+}
+
+.ex-two {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+}
+
+.ex-three {
+  height: 100px;
+  width: 100px;
+  background-color: cyan;
+  color: white;
+}
+
+.ex-four {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  color: black;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 200px;
+  color: white;
+  border: 1px solid black;
+}
