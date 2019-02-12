@@ -1,32 +1,54 @@
 <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script type="text/javascript" src="main.js" defer></script>
+<link rel="stylesheet" href="styles.css">
 
 <div id="exercise">
   <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
   <div>
+    <p>Click 'Start Effect'</p>
     <button @click="startEffect">Start Effect</button>
-    <div id="effect"></div>
+    <div id="effect" :class="effectClasses"></div>
   </div>
+  <hr>
+
   <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-  <div>I got no class :(</div>
+  <div :class="['hi-contrast', {blue: true}]">I got no class :(</div>
+  <p>Classes added via array</p>
+  <hr>
+
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
-    <input type="text">
-    <div></div>
+    <p>Enter a class: </p>
+    <p>(e.g. blue, ex-one, ex-two, ex-three, ex-four, hi-contrast)</p>
+    <input type="text" v-model="effectClasses.userClass">
+    <div :class="effectClasses.userClass">Hey, what's up</div>
   </div>
+  <hr>
+
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
   <div>
-    <input type="text">
-    <input type="text">
-    <div></div>
+    <p>Enter a class:</p>
+    <input type="text" v-model="effectClasses.userClass2">
+    <p>True or false?</p>
+    <input type="text" v-model="isVisible">
+    <div :class="[effectClasses.userClass2, {'ex-four': (isVisible == 'true' ? true : false)}]">
+      Yo, homie
+    </div>
   </div>
+  <hr>
+
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text">
-    <div></div>
+    <p>Enter a background color:</p>
+    <input type="text" v-model="styleClass.backgroundColor">
+    <div :style="styleClass">Hi, friend</div>
   </div>
+  <hr>
+
   <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
   <div>
+    <p>Click 'Start Progress'</p>
     <button v-on:click="startProgress">Start Progress</button>
-    <div></div>
+    <div :style="progressBar">Progress: {{ progressBar.width }}</div>
   </div>
 </div>
