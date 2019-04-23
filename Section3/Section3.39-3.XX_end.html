@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ ingredient }}</li>
+        </ul>
+
+        <template v-for="(ingredient, index) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ index }}</p>
+        </template>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                ingredients: ['meat', 'fruit', 'cookies'],
+                persons: [
+                    {
+                        name: 'Max',
+                        age: 27,
+                        color: 'red'
+                    },
+                    {
+                        name: 'Carl',
+                        age: 25,
+                        color: 'blue'
+                    }
+                ],
+            }
+        });
+    </script>
+</body>
+
+</html>
