@@ -24,3 +24,4 @@ having to add 'v-if' to every sibling parent.
 ORDER IS IMPORTANT. FIRST you get the item in the list SECOND you get the index of the item
 
 ## Section 3.41
+- Combining <template> and 'v-for' allows you to loop through list and output multiple elements for each item

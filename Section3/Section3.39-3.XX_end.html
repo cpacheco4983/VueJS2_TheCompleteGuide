@@ -4,16 +4,22 @@
     <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 </head>
 
-<body>
+<body style="color:white;background-color:black;">
     <div id="app">
-        <ul>
-            <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ ingredient }}</li>
-        </ul>
+        <div>
+            <h2>Unordered list repeating li element</h2>
+            <ul>
+                <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ ingredient }}</li>
+            </ul>
+        </div>
 
-        <template v-for="(ingredient, index) in ingredients">
-            <h1>{{ ingredient }}</h1>
-            <p>{{ index }}</p>
-        </template>
+        <div>
+            <h2>Template repeating children elements</h2>
+            <template v-for="(ingredient, index) in ingredients">
+                <p>{{ ingredient }}</p>
+                <p>{{ index }}</p>
+            </template>
+        </div>
     </div>
 
     <script>
