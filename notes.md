@@ -24,4 +24,13 @@ having to add 'v-if' to every sibling parent.
 ORDER IS IMPORTANT. FIRST you get the item in the list SECOND you get the index of the item
 
 ## Section 3.41
-- Combining <template> and 'v-for' allows you to loop through list and output multiple elements for each item
+- Combining template tag and 'v-for' allows you to loop through list and output multiple elements for each item
+- *** Template tag doesn't hide contents if in the vue #app ***
+
+## Section 3.42
+- You can loop through properties of objects in a collection if you nest v-for
+- When looping through arrays you can get the index. For objects you can get both the key and index.
+Just like before, ORDER MATTERS. FIRST: property value SECOND: property key THIRD: property index
+
+## Section 3.43
+-
