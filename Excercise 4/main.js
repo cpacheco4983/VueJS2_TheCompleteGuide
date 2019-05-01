@@ -1,6 +1,7 @@
 new Vue({
   el: '#exercise',
   data: {
+    isEffect: false,
     effectClasses: {
       highlight: false,
       shrink: true,
@@ -14,6 +15,7 @@ new Vue({
       'background-color': 'green'
     },
     isVisible: false,
+    isProgress: false,
     progressBar: {
       width: 0,
       'background-color': 'blue'
@@ -21,19 +23,32 @@ new Vue({
   },
   methods: {
     startEffect: function() {
-        var vObj = this;
-        setInterval(function() {
-          vObj.effectClasses.highlight = !vObj.effectClasses.highlight;
-          vObj.effectClasses.shrink = !vObj.effectClasses.shrink;
-        }, 1000);
+        var vObj = this,
+            interval;
+        this.isEffect = !this.isEffect;
+
+        if(this.isEffect) {
+          this.interval = setInterval(function() {
+            vObj.effectClasses.highlight = !vObj.effectClasses.highlight;
+            vObj.effectClasses.shrink = !vObj.effectClasses.shrink;
+          }, 1000);
+        } else {
+          clearInterval(this.interval);
+        }
     },
     startProgress: function() {
       var vObj = this,
-          progress = 0;
+          progress = 0,
+          interval;
+      this.isProgress = !this.isProgress;
 
-      setInterval(function() {
-        vObj.progressBar.width = progress++ + 'px';
-      }, 1000);
-    }
+      if(this.isProgress) {
+        this.interval = setInterval(function() {
+          vObj.progressBar.width = progress++ + 'px';
+        }, 500);
+      } else {
+        clearInterval(this.interval);
+      }
+    }  
   }
 });

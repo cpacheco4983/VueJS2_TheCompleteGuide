@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+
+<body style="color:white;background-color:black;">
+    <div id="app">
+        <!-- 3.39, 3.40 -->
+        <div>
+            <h2>Unordered list repeating li element</h2>
+            <ul>
+                <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ ingredient }}</li>
+            </ul>
+        </div>
+        <hr>
+        <!-- 3.42 -->
+        <div>
+            <ul>
+                <li v-for="person in persons">
+                    <span v-for="(value, key, index) in person">{{ index }}. {{ key }}: {{ value }}<br/></span>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <!-- 3.41 -->
+        <div>
+            <h2>Template repeating children elements</h2>
+            <template v-for="(ingredient, index) in ingredients">
+                <p>{{ ingredient }}</p>
+                <p>{{ index }}</p>
+            </template>
+        </div>
+        <div>
+            <span v-for="n in 10">{{ n }}</span>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                ingredients: ['meat', 'fruit', 'cookies'],
+                persons: [
+                    {
+                        name: 'Max',
+                        age: 27,
+                        color: 'red'
+                    },
+                    {
+                        name: 'Carl',
+                        age: 25,
+                        color: 'blue'
+                    }
+                ],
+            }
+        });
+    </script>
+</body>
+
+</html>

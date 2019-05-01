@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Can always see this.</p>
+        <p v-if="show">Can see this if 'show'</p>
+        <p v-else>Can see this if '!show'</p>
+        <template v-if="show">
+            <h3>Can see this template if 'show'</h3>
+            <p>We're inside a template</p>
+        </template>
+        <p v-show="show">Shown/hidden with v-show</p>
+        <button @click="show = !show">{{ show ? "Elements shown" : "!Elements shown" }}</button>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                show: true,
+            }
+        });
+    </script>
+</body>
+
+</html>
