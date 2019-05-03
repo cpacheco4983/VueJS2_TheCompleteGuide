@@ -6,12 +6,13 @@
 
 <body style="color:white;background-color:black;">
     <div id="app">
-        <!-- 3.39, 3.40 -->
+        <!-- 3.39, 3.40, 3.44 -->
         <div>
             <h2>Unordered list repeating li element</h2>
             <ul>
-                <li v-for="(ingredient, i) in ingredients">({{ i }}) {{ ingredient }}</li>
+                <li v-for="(ingredient, i) in ingredients" :key="ingredient">({{ i }}) {{ ingredient }}</li>
             </ul>
+            <button @click="ingredients.push('spices')">Add New</button>
         </div>
         <hr>
         <!-- 3.42 -->
@@ -31,6 +32,8 @@
                 <p>{{ index }}</p>
             </template>
         </div>
+        <hr>
+        <!-- 3.43 -->
         <div>
             <span v-for="n in 10">{{ n }}</span>
         </div>

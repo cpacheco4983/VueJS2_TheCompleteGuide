@@ -33,4 +33,9 @@ ORDER IS IMPORTANT. FIRST you get the item in the list SECOND you get the index 
 Just like before, ORDER MATTERS. FIRST: property value SECOND: property key THIRD: property index
 
 ## Section 3.43
--
+- You can use v-for to loop through numbers
+
+## Section 3.44
+- The reason pushing an item to the ingredients array rerenders instead of just updating the value in memory is because Vue keeps an eye on the values in memory vs just watching for a change in reference
+- If a list needs to be updated, VueJS updates the position of the list instead of making sure the element is the right one. If you assign a key to list items you can make sure the correct element is updated. 
+- Using the index as a key is not best practice since the index is assigned by the list meaning an element can have a different key than you were expecting
